@@ -3,13 +3,24 @@
     <%- include('../layout/head'); %>
 
     <body class="container">
+
         <%- include('../layout/header', {page:'Home'}); %>
+
         <main>
             <div class="jumbotron">
-                <h1>Node + EJS</h1>
-                <p>Aprendendo a trabalhar com o ficheiro EJS</p>
+                <h1><%= title %></h1>
+                <p><%= paragraph %></p>
             </div>
+            <ul>
+                <% qualitys.forEach((quality) => { %>
+                    <li>
+                        <strong><%= quality.title %></strong> <%= quality.message %>
+                    </li>
+                <% }) %>
+            </ul>
         </main>
+
         <%- include('../layout/footer'); %>
+
     </body>
 </html>
